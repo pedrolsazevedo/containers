@@ -1,0 +1,85 @@
+## https://squidfunk.github.io/mkdocs-material/
+
+# Site Information
+site_name: Templates and Materials for Containers
+site_url: https://github.com/psilvaazevedo/containers.git
+site_description: A group of templates that I'm using for study, also links for courses.
+site_author: Pedro Luis Silva Azevedo
+
+# GitLab Repo
+repo_name: containers
+repo_url: http://gitlab.metroweb.sp.gov.br/publico/gitlab-kb-pub
+# edit_uri: edit/main/docs/
+
+# Configuration
+strict: false
+use_directory_urls: true
+site_dir: public-docs
+
+# Documentation & Theme
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.indexes
+    - search.share
+  locale: pt_BR
+extra:
+  version:
+    provider: pedrolsazevedo
+    tag: v0.0.13
+
+
+# Extensions and Plugins
+markdown_extensions:
+    - codehilite
+    - admonition
+    - attr_list
+    - md_in_html
+    - pymdownx.tabbed:
+        alternate_style: true 
+    - pymdownx.highlight:
+          anchor_linenums: true
+          auto_title: true
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+#    - pymdownx.superfences:
+#          custom_fences:
+#              - name: mermaid
+#                class: mermaid
+#                format: !!python/name:pymdownx.superfences.fence_code_format
+    - toc:
+        permalink: true
+
+plugins:
+  - git-revision-date
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - search:
+      indexing: 'full'
+      lang:
+        - en
+        - pt
+  - markdownextradata: {}
+  - markdownmermaid
+
+# Aditional files
+extra_javascript:
+    - https://unpkg.com/mermaid@8.4.5/dist/mermaid.min.js
+
+
+# Navigation and Content
+nav:
+  - README.md
+  - Kubernetes:
+    - "Templates": 
+      - Primeiros Passos: ./Desenvolvimento/Primeiros-passos.md
+    - "Cursos":
+      - 

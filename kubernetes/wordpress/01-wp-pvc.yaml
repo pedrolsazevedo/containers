@@ -1,0 +1,35 @@
+### PVC Longhorn para execução
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-pvc-longhorn-claim
+  namespace: wp-ns
+  labels:
+    app: wp-CHANGEME
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 5Gi
+    limits:
+      storage: 10Gi
+---
+### PVC Azure Files para cópia diária
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-pvc-azurefiles-claim
+  namespace: wp-ns
+  labels:
+    app: wp-CHANGEME
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: azurefile
+  resources:
+    requests:
+      storage: 15Gi
+    limits:
+      storage: 20Gi

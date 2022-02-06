@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  mkdocs:
+    container_name: 'containers-mkdocs-material'
+    build: .
+    ports:
+      - '8080:8000'
+    volumes:
+      - "./:/src"
+    image: containers-mkdocs-material:latest

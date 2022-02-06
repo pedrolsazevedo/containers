@@ -79,7 +79,8 @@ extra_javascript:
 nav:
   - README.md
   - Kubernetes:
-    - "Templates": 
-      - Primeiros Passos: ./Desenvolvimento/Primeiros-passos.md
+    - "Templates": ./kubernetes.md
+#    - "Templates": 
+#      - Primeiros Passos: ./Desenvolvimento/Primeiros-passos.md
     - "Cursos":
-      - 
+      - ./courses.md

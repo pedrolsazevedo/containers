@@ -5,7 +5,7 @@ pages:
     - main
   script:
     - pip install mkdocs-material
-    - mkdocs build --site-dir public
+    - mkdocs build --site-dir public-doc
   artifacts:
     paths:
-      - public
+      - public-docs

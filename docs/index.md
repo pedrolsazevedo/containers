@@ -1,0 +1,1 @@
+[![ci](https://github.com/pedrolsazevedo/containers/actions/workflows/ci.yaml/badge.svg?event=label)](https://github.com/pedrolsazevedo/containers/actions/workflows/ci.yaml)

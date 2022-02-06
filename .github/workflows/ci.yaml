@@ -1,8 +1,11 @@
 name: ci 
 on:
-  label:
-    types:
-      - created
+  push:
+    branches:
+      - "main"
+#  label:
+#    types:
+#      - created
 jobs:
   deploy:
     runs-on: ubuntu-latest

@@ -2,13 +2,13 @@
 
 # Site Information
 site_name: Templates and Materials for Containers
-site_url: https://github.com/psilvaazevedo/containers.git
+site_url: https://github.com/pedrolsazevedo/containers.git
 site_description: A group of templates that I'm using for study, also links for courses.
 site_author: Pedro Luis Silva Azevedo
 
 # GitLab Repo
 repo_name: containers
-repo_url: http://gitlab.metroweb.sp.gov.br/publico/gitlab-kb-pub
+repo_url: https://github.com/pedrolsazevedo/containers.git
 # edit_uri: edit/main/docs/
 
 # Configuration
@@ -77,10 +77,11 @@ extra_javascript:
 
 # Navigation and Content
 nav:
-  - README.md
+  - index.md
   - Kubernetes:
-    - "Templates": ./kubernetes.md
+    - "Templates": 
+      - "Wordpress": kubernetes/wordpress.md
 #    - "Templates": 
 #      - Primeiros Passos: ./Desenvolvimento/Primeiros-passos.md
     - "Cursos":
-      - ./courses.md
+      - "Sites": study/courses.md

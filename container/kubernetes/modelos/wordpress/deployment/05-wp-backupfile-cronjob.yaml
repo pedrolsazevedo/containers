@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: wp-backup-longhorn2azurefiles
+  namespace: wp-ns
+spec:
+  schedule: "1 1 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: wp-copy-longhorn2azurefile
+            image: busybox
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: "WP_NAME"
+                value: "wp-ALTERAR"
+            command: [ "/bin/sh" ]
+            args: [ "-c", "tar -czvpf /mnt/azurefilepv/$(echo $WP_NAME)_$(date '+%Y%m%d_%H%M')_bkp.tar.gz /mnt/wplonghorn"]
+            volumeMounts:
+            - name: longhorn-pv
+              mountPath: /mnt/wplonghorn
+            - name: azurefile-pv
+              mountPath: /mnt/azurefilepv
+          volumes:
+            - name: longhorn-pv
+              persistentVolumeClaim:
+                claimName: wp-pvc-longhorn-claim
+            - name: azurefile-pv
+              persistentVolumeClaim:
+                claimName: wp-pvc-azurefiles-claim

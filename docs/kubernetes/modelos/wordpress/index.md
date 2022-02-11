@@ -1,5 +1,5 @@
 
-Meu deployment em produção foram algumas instâncias de wordpress CMS rodando em AKS.
+Meu primeiro deployment em produção foram algumas instâncias de wordpress CMS rodando em AKS.
 Esse modelo utiliza Ingress NGINX, Métricas, e dois drivers de storage class Azure Files e Longhorn.
 
 [Repositório GitHub](https://github.com/pedrolsazevedo/containers/tree/main/docs/kubernetes/modelos/wordpress)
@@ -104,7 +104,7 @@ Este arquivo cria dois componentes que possibilitam o acesso aos recursos que vo
 [**ConfigMap**](https://kubernetes.io/docs/concepts/configuration/configmap/)  
 [**Secret**](https://kubernetes.io/docs/concepts/configuration/secret/)  
 [**Deployments**](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)  
-[**Horizontal Pod Autoscaling**](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)  
-[**CronJob**](https://kubernetes.io/pt-br/docs/concepts/workloads/controllers/cron-jobs/)
-[**Service**](https://kubernetes.io/docs/concepts/services-networking/service/)
-[**Ingress**](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+[**Horizontal Pod Autoscaling**](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)    
+[**CronJob**](https://kubernetes.io/pt-br/docs/concepts/workloads/controllers/cron-jobs/)    
+[**Service**](https://kubernetes.io/docs/concepts/services-networking/service/)    
+[**Ingress**](https://kubernetes.io/docs/concepts/services-networking/ingress/)    

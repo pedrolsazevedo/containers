@@ -5,3 +5,7 @@
   [Materiais](estudos/materiais.md)  
 1. [Kubernetes](kubernetes/index.md)  
 1. Docker
+1. Cloud  
+  1.1 Azure  
+    [AZ900](estudos/azure/az900.md)  
+    [AZ104](estudos/azure/az104.md)  

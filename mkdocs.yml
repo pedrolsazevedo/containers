@@ -1,7 +1,7 @@
 ## https://squidfunk.github.io/mkdocs-material/
 
 # Site Information
-site_name: Containers
+site_name: Estudo de Cloud e Containers
 site_url: https://pedrolsazevedo.github.io/containers/
 site_description: Conjunto de materias e modelos para aprendizado de containers.
 site_author: Pedro Luis Silva Azevedo
@@ -85,3 +85,7 @@ nav:
     - Modelos: 
       - kubernetes/index.md
       - "Wordpress": "kubernetes/modelos/wordpress/index.md"
+  - Cloud:
+    - Azure:
+      - "AZ-900 Fundamentals": estudos/azure/az900.md
+      - "AZ-104 Fundamentals": estudos/azure/az104.md

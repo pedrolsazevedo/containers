@@ -78,8 +78,23 @@ Seu cluster acompanha o consumo dos pods e compara, total do consumo com o valor
     ```
 ***
 
-[**05-wp-backupfile-cronjob.yaml**](deployment/05-wp-backupfile-cronjob.yaml)
-This file creates a `CronJob` that will run everyday at 01:01 and run a copy from the longhorn PVC to the azure PVC
+[**05-wp-backupfile-cronjob.yaml**](deployment/05-wp-backupfile-cronjob.yaml)  
+Este arquivo cria um `CronJob` que será executado todo dia à 01:01.  
+Durante a execução o pod irá criar um arquivo compactado do conteudo do wordpress e guardará no armazenamento do AzureFiles.  
+Para alterar o horário de execução, basta alterar o seguimento `schedule` no arquivo.
+  ```yaml
+  schedule: "1 1 * * *"
+  ```
+
+[**06-wp-service-ingress.yaml**](deployment/06-wp-service-ingress.yaml)  
+Este arquivo cria dois componentes que possibilitam o acesso aos recursos que voce criou:
+  * Service
+    Cria uma exposição dos pods no namespace, para que voce possa acessar a porta configurada ou com port-forwarding ou com o ingress, por exemplo.
+
+  * Ingress
+    O ingress é o responsável por expor as rotas de acesso para fora do cluster.
+
+  ![fluxo](imgs/ingress-service.png)
 
 ***
 
@@ -90,3 +105,6 @@ This file creates a `CronJob` that will run everyday at 01:01 and run a copy fro
 [**Secret**](https://kubernetes.io/docs/concepts/configuration/secret/)  
 [**Deployments**](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)  
 [**Horizontal Pod Autoscaling**](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)  
+[**CronJob**](https://kubernetes.io/pt-br/docs/concepts/workloads/controllers/cron-jobs/)
+[**Service**](https://kubernetes.io/docs/concepts/services-networking/service/)
+[**Ingress**](https://kubernetes.io/docs/concepts/services-networking/ingress/)

@@ -1,20 +1,22 @@
 ## https://squidfunk.github.io/mkdocs-material/
 
 # Site Information
-site_name: Templates and Materials for Containers
-site_url: https://github.com/pedrolsazevedo/containers.git
-site_description: A group of templates that I'm using for study, also links for courses.
+site_name: Containers
+site_url: https://pedrolsazevedo.github.io/containers/
+site_description: Conjunto de materias e modelos para aprendizado de containers.
 site_author: Pedro Luis Silva Azevedo
 
-# GitLab Repo
+# Git Repo
 repo_name: containers
-repo_url: https://github.com/pedrolsazevedo/containers.git
-# edit_uri: edit/main/docs/
+repo_url: https://github.com/pedrolsazevedo/containers/
+edit_uri: edit/main/docs/
 
 # Configuration
 strict: false
 use_directory_urls: true
-site_dir: public-docs
+docs_dir: docs
+site_dir: public
+dev_addr: 0.0.0.0:8000
 
 # Documentation & Theme
 theme:
@@ -26,37 +28,42 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.top
     - navigation.tracking
     - navigation.indexes
-    - search.share
-  locale: pt_BR
+    - search.share 
+    - content.code.annotate
+#  locale: en
+  language: pt-BR
 extra:
   version:
-    provider: pedrolsazevedo
     tag: v0.0.13
-
+    provider: pedrolsazevedo
 
 # Extensions and Plugins
 markdown_extensions:
-    - codehilite
-    - admonition
-    - attr_list
-    - md_in_html
-    - pymdownx.tabbed:
-        alternate_style: true 
-    - pymdownx.highlight:
-          anchor_linenums: true
-          auto_title: true
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
-#    - pymdownx.superfences:
-#          custom_fences:
-#              - name: mermaid
-#                class: mermaid
-#                format: !!python/name:pymdownx.superfences.fence_code_format
-    - toc:
-        permalink: true
+  - toc:
+      permalink: true
+
+  - codehilite
+  - admonition
+  - attr_list
+  - md_in_html
+
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.highlight:
+        anchor_linenums: true
+        auto_title: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+
 
 plugins:
   - git-revision-date
@@ -65,23 +72,16 @@ plugins:
   - search:
       indexing: 'full'
       lang:
-        - en
-        - pt
+         - pt-BR
   - markdownextradata: {}
-  - markdownmermaid
-
-# Aditional files
-extra_javascript:
-    - https://unpkg.com/mermaid@8.4.5/dist/mermaid.min.js
-
 
 # Navigation and Content
 nav:
   - index.md
+  - Estudos:
+    - "Cursos": estudos/cursos.md
+    - "Materiais": estudos/materiais.md
   - Kubernetes:
-    - "Templates": 
-      - "Wordpress": kubernetes/wordpress.md
-#    - "Templates": 
-#      - Primeiros Passos: ./Desenvolvimento/Primeiros-passos.md
-    - "Cursos":
-      - "Sites": study/courses.md
+    - Modelos: 
+      - kubernetes/index.md
+      - "Wordpress": "kubernetes/modelos/wordpress/index.md"

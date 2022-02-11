@@ -1,9 +1,0 @@
-# CIs files
-.github/
-.gitlab-ci.yaml
-
-# Build site
-public-doc/
-
-# general
-notes

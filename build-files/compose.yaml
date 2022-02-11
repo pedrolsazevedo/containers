@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  mkdocs:
+    container_name: 'containers-mkdocs-material'
+    build: .
+    ports:
+      - '8080:8000'
+#    volumes:
+#      - "E:/data/git/containers:/app"
+#    image: site-mkdocs-material
+    image: base-mkdocs-material

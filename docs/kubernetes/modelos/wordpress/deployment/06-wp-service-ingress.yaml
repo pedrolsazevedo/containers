@@ -1,0 +1,44 @@
+### Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: wp-svc
+  namespace: wp-ns
+  labels:
+    app: wp-CHANGEME
+spec:
+  ports:
+    - port: 80
+      name: wp-http
+  selector:
+    app: wp-CHANGEME
+  type: LoadBalancer
+---
+### Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wp-ingress
+  namespace: wp-ns
+  labels:
+    app: wp-CHANGEME
+    function: ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+#    ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+#  tls:
+#    - hosts:
+#      - metrosp.com.br
+#      secretName: aks-wp-ingress-tls
+  rules:
+  - host: CHANGEME.metrosp.com.br
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: wp-svc
+            port:
+              number: 80

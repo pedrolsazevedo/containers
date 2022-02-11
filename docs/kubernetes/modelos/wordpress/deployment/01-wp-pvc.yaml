@@ -13,8 +13,6 @@ spec:
   resources:
     requests:
       storage: 5Gi
-    limits:
-      storage: 10Gi
 ---
 ### PVC Azure Files para cópia diária
 apiVersion: v1
@@ -31,5 +29,3 @@ spec:
   resources:
     requests:
       storage: 15Gi
-    limits:
-      storage: 20Gi

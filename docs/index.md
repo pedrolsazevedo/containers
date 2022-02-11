@@ -4,4 +4,4 @@
   [Cursos](estudos/cursos.md)  
   [Materiais](estudos/materiais.md)  
 1. [Kubernetes](kubernetes/index.md)  
-1. [Docker](.)  
+1. Docker

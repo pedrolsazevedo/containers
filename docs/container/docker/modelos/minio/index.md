@@ -1,5 +1,5 @@
 ## Descrição
-Muitas aplicações, como Longhorn, necessitam de um endpoit S3 para armazenamento em bloco. Até o momento a azure não oferece isso de forma nativa no serviço.  
+Muitas aplicações, como Longhorn, necessitam de um endpoint S3 para armazenamento em bloco. Até o momento a azure não oferece isso de forma nativa no serviço.  
 Uma opção para atender essa necessidade é utilizar o **`Minio Azure Gateway`**, este modelo de `docker compose` necessita que voce possua uma `Storage Account` já criada.
 
 ```yaml

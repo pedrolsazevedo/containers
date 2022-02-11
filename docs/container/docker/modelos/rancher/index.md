@@ -1,5 +1,5 @@
 
-```docker-cli
+```docker
 docker run -dit -name rancher-ui --restart=unless-stopped \
   -p 80:80 -p 443:443 \
   -v /opt/rancher:/var/lib/rancher \

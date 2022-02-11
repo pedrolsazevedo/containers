@@ -4,7 +4,7 @@
   [Cursos](estudos/devops/cursos.md)  
   [Materiais](estudos/devops/materiais.md)  
 1. [Kubernetes](container/kubernetes/index.md)  
-1. Docker
+1. [Docker](container/docker/index.md)
 1. Cloud  
   1.1 Azure  
     [AZ900](estudos/azure/az900.md)  

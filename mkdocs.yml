@@ -78,21 +78,22 @@ plugins:
 # Navigation and Content
 nav:
   - index.md
-  - Estudos:
-#    - estudos/index.md
-    - DevOps:
-      - "Cursos": "estudos/devops/cursos.md"
-      - "Materiais": "estudos/devops/materiais.md"
-    - Azure:
-      - "AZ-900 Fundamentals": estudos/azure/az900.md
-      - "AZ-104 Fundamentals": estudos/azure/az104.md
   - Kubernetes:
     - Modelos: 
       - container/kubernetes/index.md
       - "Wordpress": "container/kubernetes/modelos/wordpress/index.md"
-  
+      - "NGNIX": "container/kubernetes/modelos/NGINX/index.md"
   - Docker:
     - Modelos:
       - container/docker/index.md
       - "Minio Azure Gateway": "container/docker/modelos/minio/index.md"
       - "Rancher": "container/docker/modelos/rancher/index.md"
+  - Estudos:
+    - estudos/index.md
+    - DevOps:
+      - "Cursos": "estudos/devops/cursos.md"
+      - "Materiais": "estudos/devops/materiais.md"
+    - Azure:
+      - "AZ-900 Azure Fundamentals": estudos/azure/az900.md
+      - "AZ-104 Azure Administrator": estudos/azure/az104.md
+      - "AZ-305 Azure Architect": estudos/azure/az305.md

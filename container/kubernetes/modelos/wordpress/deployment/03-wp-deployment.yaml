@@ -1,0 +1,91 @@
+### Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wp-ALTERAR
+  namespace: wp-ns
+  labels:
+    app: wp-CHANGEME
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wp-CHANGEME
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wp-CHANGEME
+    spec:
+      containers:
+      - name: wp-ALTERAR
+        image: wordpress:php8.1-apache
+        env:
+          - name: WORDPRESS_DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: wp-cm-dbcred
+                key: wp_db_host
+          - name: WORDPRESS_DB_PORT
+            valueFrom:
+              secretKeyRef:
+                name: wp-cm-dbcred
+                key: wp_db_port
+          - name: WORDPRESS_DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: wp-cm-dbcred
+                key: wp_db_name
+          - name: WORDPRESS_TABLE_PREFIX
+            valueFrom:
+              secretKeyRef:
+                name: wp-cm-dbcred
+                key: wp_table_prefix
+          - name: WORDPRESS_DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: wp-cm-dbcred
+                key: wp_db_user
+          - name: WORDPRESS_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: wp-cm-dbcred
+                key: wp_db_password
+
+ #       - name: WORDPRESS_DB_HOST
+ #         value: "MYSQL-DATABASE-HOST"
+ #       - name: WORDPRESS_DB_USER
+ #         value: "MYSQL-DATABASE-USER"
+ #       - name: WORDPRESS_DB_PASSWORD
+ #         value: "MYSQL-DATABASE-PASSWORD"
+ #       - name: WORDPRESS_DB_PORT
+ #         value: "MYSQL-DATABASE-PORT"
+ #       - name: WORDPRESS_DB_NAME
+ #         value: "MYSQL-DATABASE-NAME"
+ #       - name: WORDPRESS_TABLE_PREFIX
+ #         value: "MYSQL-DATABASE-PREFIX"
+
+        ports:
+        - containerPort: 80
+          name: wp-http
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 200m
+            memory: 512Mi
+        volumeMounts:
+          - name: wp-persistent-storage
+            mountPath: /var/www/html
+          - name: wp-cm-htaccess
+            mountPath: /var/www/html/.htaccess
+            subPath: .htaccess
+      volumes:
+        - name: wp-persistent-storage
+          persistentVolumeClaim:
+            claimName: wp-pvc-longhorn-claim
+        - name: wp-cm-htaccess
+          configMap:
+            name: wp-cm-htaccess

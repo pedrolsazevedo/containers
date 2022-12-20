@@ -1,0 +1,16 @@
+services:
+  portainer-ce:
+    container_name: portainer
+#    image: 'portainer/portainer-ee:latest' # enterprise edition
+    image: 'portainer/portainer-ce:latest' # community edition
+    ports:
+      - '8000:8000'
+      - '9000:9000'
+      - '9443:9443'
+    restart: unless-stopped
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './data:/data'
+#      - 'portainer_data:/data'
+#volumes:
+#  portainer_data:      

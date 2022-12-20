@@ -1,0 +1,21 @@
+services:
+  agent:
+    container_name: portainer_agent
+    image: 'portainer/agent:2.16.2'
+    ports:
+      - '9001:9001'
+
+    restart: always
+    volumes:
+      - 'C:\:C:\host'
+      - 'C:\ProgramData\docker\volumes:C:\ProgramData\docker\volumes'
+      - '\\.\pipe\docker_engine:\\.\pipe\docker_engine'
+
+# docker run -d \
+#   -p 9001:9001 \
+#   --name portainer_agent \
+#   --restart=always \
+#   -v C:\:C:\host \
+#   -v C:\ProgramData\docker\volumes:C:\ProgramData\docker\volumes \
+#   -v \\.\pipe\docker_engine:\\.\pipe\docker_engine \
+#   portainer/agent:2.16.2

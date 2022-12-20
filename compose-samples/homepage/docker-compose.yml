@@ -1,0 +1,10 @@
+# https://github.com/benphelps/homepage
+services:
+  homepage:
+    image: ghcr.io/benphelps/homepage:latest
+    container_name: homepage
+    ports:
+      - 3000:3000
+    volumes:
+      - F:\container\docker-homepage\data:/app/config # Make sure your local config directory exists
+      #- /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations

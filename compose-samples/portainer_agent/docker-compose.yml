@@ -1,0 +1,18 @@
+services:
+  agent:
+    container_name: portainer_agent
+    image: 'portainer/agent:2.16.2'
+    ports:
+      - '9001:9001'
+    restart: always
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/var/lib/docker/volumes:/var/lib/docker/volumes'
+
+# docker run -d \
+#   -p 9001:9001 \
+#   --name portainer_agent \
+#   --restart=always \
+#   -v /var/run/docker.sock:/var/run/docker.sock \
+#   -v /var/lib/docker/volumes:/var/lib/docker/volumes \
+#   portainer/agent:2.16.2
